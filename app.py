@@ -5,8 +5,8 @@ import asyncio
 from google import genai
 import edge_tts
 
-# FIX MOVIEPY V2: Impor langsung dari module moviepy tanpa .editor
-from moviepy import ImageClip, AudioFileClip
+# Menggunakan MoviePy v1 syntax yang ultra-stabil
+from moviepy.editor import ImageClip, AudioFileClip
 
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
@@ -51,8 +51,8 @@ print("🖼️ Gambar Background Berhasil Diunduh!")
 
 # 5. RENDER VIDEO MP4
 audio_clip = AudioFileClip(audio_file)
-image_clip = ImageClip(image_file).with_duration(audio_clip.duration)
-video_clip = image_clip.with_audio(audio_clip)
+image_clip = ImageClip(image_file).set_duration(audio_clip.duration)
+video_clip = image_clip.set_audio(audio_clip)
 
 output_video = "final_output.mp4"
 video_clip.write_videofile(
