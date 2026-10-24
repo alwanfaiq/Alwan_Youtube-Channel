@@ -5,7 +5,7 @@ import asyncio
 from google import genai
 import edge_tts
 
-# Menggunakan MoviePy v1 syntax yang ultra-stabil
+# Menggunakan impor MoviePy v1 (kompatibel dengan "moviepy<2.0.0")
 from moviepy.editor import ImageClip, AudioFileClip
 
 from google.oauth2.credentials import Credentials
